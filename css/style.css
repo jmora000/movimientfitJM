@@ -1,1 +1,8 @@
-/* Archivo vacio */
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-size: 10px;
+}
