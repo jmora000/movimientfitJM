@@ -16,16 +16,17 @@
 <body id="index">
     <!-- Encabezado -->
     <header class="header">
-        <!-- Menu hamburguesa para mobile -->
-        <a href="#" class="header__burger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </a>
         <!-- Menu de navegacion -->
         <nav class="header__nav">
-            <ul>
-                <li><a href="#" class="header__nav--selected">Inicio</a></li>
+            <!-- Menu hamburguesa para mobile -->
+            <div class="header__nav__burger">
+                <input class="burger__checkbox" type="checkbox">
+                <span class="burger__line burger__line1"></span>
+                <span class="burger__line burger__line2"></span>
+                <span class="burger__line burger__line3"></span>
+            </div>
+            <ul class="header__nav__menu">
+                <li><a href="#" class="header__nav__menuitem--selected">Inicio</a></li>
                 <li><a href="./asesorias.html">Asesorías Personalizadas</a></li>
                 <li><a href="./educacion.html">Aprende Conmigo</a></li>
                 <li><a href="./sobre-mi.html">Sobre Mi</a></li>
