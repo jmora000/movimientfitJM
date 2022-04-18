@@ -105,17 +105,16 @@
     transform: rotate(-45deg);
     background-color: #bbcc62;
 }
-.header__nav .header__nav__checkbox:checked ~ .header__nav__menu{
-    margin: 0px;
-}
 .header__nav .header__nav__menuitem:hover{
     border-image-source: linear-gradient(to left, #00000000 10%, #bbcc62, #00000000 90%)
+}
+.header__nav .header__nav__checkbox:checked ~ .header__nav__menu{
+    margin-top: 0px;
 }
 /* ////////////////////// */
 /* Responsive             */
 /* ////////////////////// */
 @media screen and (max-width: 480px){
-    
 }
 @media (min-width: 481px) and (max-width: 768px){
 }
@@ -127,5 +126,9 @@
         flex-direction: row;
         transform: translateY(250px); /* Se usa esto para eliminar el tiempo de animacion del margin-top */
         height: 100%;
+    }
+    /* Soluciona error cuando esta checkeado el checkbox y se cambia de media. */
+    .header__nav .header__nav__checkbox:checked ~ .header__nav__menu{
+        margin-top: -250px;
     }
 }
