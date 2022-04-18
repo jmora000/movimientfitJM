@@ -24,23 +24,19 @@
 }
 /* Menu desplegable para seleccionar cada pagina */
 .header__nav__menu{
-    position: absolute;
-    top: 12vh;
-    height: auto;
-    width: 100vw;
+    position: relative;
+    height: 200px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    transform: translateY(-200px);
-    transform-origin: 0% 100%;
+    justify-content: space-around;
+    gap: 10px;
+    margin-top: -250px;
     list-style-type: none;
     z-index: -1;
-    transition: all 0.4s;
+    transition: margin-top 300ms ease-in-out;
     background-color: #181813;
-}
-.header__nav__menu li{
-    margin: 10px 0px;
 }
 .header__nav .header__nav__menuitem{
     text-decoration: none;
@@ -89,7 +85,7 @@
     width: 100%;
     border-radius: 10px;
     background-color: #bbcc62;
-    transition: all 0.4s;
+    transition: all 400ms ease-in-out;
 }
 .header__nav .burger__lines__line1{
     transform-origin: 0% 0%;
@@ -110,8 +106,26 @@
     background-color: #bbcc62;
 }
 .header__nav .header__nav__checkbox:checked ~ .header__nav__menu{
-    transform: translateY(0px);
+    margin: 0px;
 }
 .header__nav .header__nav__menuitem:hover{
     border-image-source: linear-gradient(to left, #00000000 10%, #bbcc62, #00000000 90%)
+}
+/* ////////////////////// */
+/* Responsive             */
+/* ////////////////////// */
+@media screen and (max-width: 480px){
+    
+}
+@media (min-width: 481px) and (max-width: 768px){
+}
+@media screen and (min-width: 768px){
+    .header__nav__burger, .header__nav__checkbox{
+        display: none;
+    }
+    .header__nav__menu{
+        flex-direction: row;
+        transform: translateY(250px); /* Se usa esto para eliminar el tiempo de animacion del margin-top */
+        height: 100%;
+    }
 }
