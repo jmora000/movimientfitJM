@@ -33,6 +33,7 @@
     justify-content: space-around;
     gap: 10px;
     margin-top: -250px;
+    padding: 10px 0px;
     list-style-type: none;
     z-index: -1;
     transition: margin-top 300ms ease-in-out;
@@ -124,7 +125,7 @@
     }
     .header__nav__menu{
         flex-direction: row;
-        transform: translateY(250px); /* Se usa esto para eliminar el tiempo de animacion del margin-top */
+        transform: translateY(249px); /* Se usa esto para eliminar el tiempo de animacion del margin-top */
         height: 100%;
     }
     /* Soluciona error cuando esta checkeado el checkbox y se cambia de media. */
