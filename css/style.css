@@ -205,7 +205,28 @@
 .maincontent__description__button{
     width: 100%;
     justify-content: center;
-    margin-bottom: 4vh;
+    margin-bottom: 6vh;
+}
+/* ////////////////////// */
+/* Overlay                */
+/* ////////////////////// */
+.overlay__spotify{
+    display: none;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+}
+.overlay__whatsapp{
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    width: 5em;
+}
+/* ////////////////////// */
+/* Footer                */
+/* ////////////////////// */
+.footer{
+    position: relative;
 }
 /* ////////////////////// */
 /* Responsive             */
@@ -237,6 +258,12 @@
     }
     .maincontent__description p{
         font-size: 2em;
+    }
+    /* ////////////////////// */
+    /* Overlay                */
+    /* ////////////////////// */
+    .overlay__spotify{
+        display: block;
     }
 }
 /* Desktop */
@@ -283,5 +310,11 @@
     }
     .maincontent__description p{
         font-size: 2.5em;
+    }
+    /* ////////////////////// */
+    /* Overlay                */
+    /* ////////////////////// */
+    .overlay__spotify{
+        display: block;
     }
 }
