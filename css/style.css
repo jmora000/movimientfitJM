@@ -5,8 +5,8 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     font-size: 10px;
+    transition: font-size 400ms;
 }
-
 /* ////////////////////// */
 /* Encabezado             */
 /* ////////////////////// */
@@ -122,8 +122,9 @@
     background-color: #bbcc62;
     border: 3px solid #bbcc62;
     border-radius: 50px;
-    font-size: 2em;
+    font-size: 1.5em;
     text-decoration: none;
+    text-align: center;
     color: #000000;
     padding: 10px;
     transition: all 300ms;
@@ -136,9 +137,9 @@
 .maincontent{
     position: relative;
     display: grid;
-    grid-template-rows: 40% 60%;
+    grid-template-rows: 50% 50%;
     grid-template-columns: 100%;
-    top: 12vh;
+    top: 11.9vh;
     width: 100vw;
     height: 88vh;
     background-color: #181813;
@@ -159,10 +160,20 @@
     padding: 5px;
 }
 .maincontent__main h1{
-    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 3em;
+    font-family: 'Barlow', sans-serif;
+    /* Mismo color del fondo para lograr un efecto de contorno */
+    text-shadow: 0px 0px 4px #bbcc62;
+    color: #181813;
+    text-align: center;
 }
 .maincontent__main h2{
     color: #ffffff;
+    font-size: 1.5em;
+    font-style: italic;
+    text-decoration: underline;
 }
 /* Parte de la descripcion - secondary */
 .maincontent__description{
@@ -188,34 +199,89 @@
 .maincontent__description p{
     display: inline;
     color: #ffffff;
-    font-size: 2em;
+    font-size: 1.6em;
     margin-bottom: 0px; /* Para eliminar un error del boostrap */
 }
 .maincontent__description__button{
     width: 100%;
     justify-content: center;
-    margin-bottom: 10%;
+    margin-bottom: 4vh;
 }
 /* ////////////////////// */
 /* Responsive             */
 /* ////////////////////// */
-@media screen and (max-width: 480px){
-}
+/* Tablet */
 @media (min-width: 481px) and (max-width: 768px){
+    /* ////////////////////// */
+    /* Estructura             */
+    /* ////////////////////// */
+    .button{
+        font-size: 1.5em;
+    }
+    .maincontent{
+        grid-template-rows: 100%;
+        grid-template-columns: 40% 60%;
+    }
+    .maincontent__main img{
+        height: unset;
+        width: 70%;
+    }
+    .maincontent__main h1{
+        font-size: 4em;
+    }
+    .maincontent__main h2{
+        font-size: 2em;
+    }
+    .maincontent__description{
+        justify-content: space-around;
+    }
+    .maincontent__description p{
+        font-size: 2em;
+    }
 }
+/* Desktop */
 @media screen and (min-width: 768px){
+    /* ////////////////////// */
+    /* Header                 */
+    /* ////////////////////// */
     .header__nav__burger, .header__nav__checkbox{
         display: none;
     }
     .header__nav__menu{
         flex-direction: row;
         transform: translateY(249px); /* Se usa esto para eliminar el tiempo de animacion del margin-top */
-        height: 100%;
+        height: 105%;
         border-bottom: 1px solid #292929;
         box-shadow: none;
     }
     /* Soluciona error cuando esta checkeado el checkbox y se cambia de media. */
     .header__nav .header__nav__checkbox:checked ~ .header__nav__menu{
         margin-top: -250px;
+    }
+    /* ////////////////////// */
+    /* Estructura             */
+    /* ////////////////////// */
+    .button{
+        font-size: 2em;
+    }
+    .maincontent{
+        grid-template-rows: 100%;
+        grid-template-columns: 40% 60%;
+    }
+    .maincontent__main img{
+        height: unset;
+        width: 70%;
+    }
+    .maincontent__main h1{
+        font-size: 5em;
+    }
+    .maincontent__main h2{
+        font-size: 3em;
+    }
+    .maincontent__description{
+        justify-content: space-around;
+    }
+    .maincontent__description p{
+        font-size: 2.5em;
     }
 }
