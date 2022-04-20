@@ -6,6 +6,7 @@
     scroll-behavior: smooth;
     font-size: 10px;
 }
+
 /* ////////////////////// */
 /* Encabezado             */
 /* ////////////////////// */
@@ -38,6 +39,7 @@
     z-index: -1;
     transition: margin-top 300ms ease-in-out;
     background-color: #181813;
+    box-shadow: 0px 0px 15px #292929;
 }
 .header__nav .header__nav__menuitem{
     text-decoration: none;
@@ -51,13 +53,14 @@
 }
 .header__nav .header__nav__menuitem--selected{
     font-weight: bolder;
+    color: #bbcc62;
 }
 /* Menu hamburguesa */
 .header__nav__burger{
     height: 100%;
     width: 100%;
     background-color: #181813;
-    border-bottom: 1px solid #373737;
+    border-bottom: 1px solid #292929;
 }
 .header__nav .header__nav__checkbox{
     position: absolute;
@@ -113,6 +116,87 @@
     margin-top: 0px;
 }
 /* ////////////////////// */
+/* Estructura             */
+/* ////////////////////// */
+.button{
+    background-color: #bbcc62;
+    border: 3px solid #bbcc62;
+    border-radius: 50px;
+    font-size: 2em;
+    text-decoration: none;
+    color: #000000;
+    padding: 10px;
+    transition: all 300ms;
+}
+.button:hover{
+    background-color: #181813;
+    border: 3px solid #bbcc62;
+    color: #ffffff;
+}
+.maincontent{
+    position: relative;
+    display: grid;
+    grid-template-rows: 40% 60%;
+    grid-template-columns: 100%;
+    top: 12vh;
+    width: 100vw;
+    height: 88vh;
+    background-color: #181813;
+}
+/* Parte de la foto - main*/
+.maincontent__main{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.maincontent__main img{
+    height: 70%;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    padding: 5px;
+}
+.maincontent__main h1{
+    color: #ffffff;
+}
+.maincontent__main h2{
+    color: #ffffff;
+}
+/* Parte de la descripcion - secondary */
+.maincontent__description{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.maincontent__description div{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    gap: 10px;
+}
+.maincontent__description svg{
+    color: #bbcc62;
+    width: 3em;
+    height: 3em;
+    min-width: 3em;
+}
+.maincontent__description p{
+    display: inline;
+    color: #ffffff;
+    font-size: 2em;
+    margin-bottom: 0px; /* Para eliminar un error del boostrap */
+}
+.maincontent__description__button{
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10%;
+}
+/* ////////////////////// */
 /* Responsive             */
 /* ////////////////////// */
 @media screen and (max-width: 480px){
@@ -127,6 +211,8 @@
         flex-direction: row;
         transform: translateY(249px); /* Se usa esto para eliminar el tiempo de animacion del margin-top */
         height: 100%;
+        border-bottom: 1px solid #292929;
+        box-shadow: none;
     }
     /* Soluciona error cuando esta checkeado el checkbox y se cambia de media. */
     .header__nav .header__nav__checkbox:checked ~ .header__nav__menu{
