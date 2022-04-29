@@ -1,0 +1,134 @@
+@import "vars";
+
+.header{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 12vh;
+    min-height: 60px;
+    z-index: 4;
+    &__nav{
+        width: 100%;
+        height: 100%;
+        &__checkbox{
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            height: 32px;
+            width: 32px;
+            margin-top: -16px; // Para dejar centrado
+            opacity: 0;
+            z-index: 5;
+        }
+        &__burger{
+            height: 100%;
+            width: 100%;
+            background-color: map-get($pageColors, dark);
+            border-bottom: 1px solid map-get($pageColors, lightBorder);
+            .burger__lines{
+                position: absolute;
+                top: 50%;
+                left: 20px;
+                height: 26px;
+                width: 32px;
+                margin-top: -13px; // Para dejar centrado 
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                span{
+                    height: 3px;
+                    width: 100%;
+                    border-radius: 10px;
+                    background-color: map-get($pageColors, main);
+                    transition: all 400ms ease-in-out;
+                }
+                .burger__lines--line1{
+                    transform-origin: 0% 0%;
+                }
+                .burger__lines--line3{
+                    transform-origin: 0% 100%;
+                }
+            }
+        }
+        &__menu{
+            position: relative;
+            height: 200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            gap: 10px;
+            margin-top: -250px;
+            padding: 10px 0px;
+            list-style-type: none;
+            z-index: -1;
+            transition: margin-top 300ms ease-in-out;
+            background-color: map-get($pageColors, dark);
+            box-shadow: 0px 0px 15px map-get($pageColors, lightBorder);
+            &__item{
+                text-decoration: none;
+                font-size: 1.7em;
+                color: map-get($pageColors, light);
+                border-bottom: 10px solid;
+                border-image-slice: 1;
+                border-width: 2px;
+                border-image-source: linear-gradient(to left, #00000000 50%, map-get($pageColors, main), #00000000 50%);
+                transition: all 250ms ease-in-out;
+                &:hover{
+                    color: map-get($pageColors, light); //Porque boostrap si no lo pone azul
+                    border-image-source: linear-gradient(to left, #00000000 10%, map-get($pageColors, main), #00000000 90%)
+                }
+            }
+            &__item--selected{
+                @extend .header__nav__menu__item;
+                font-weight: bolder;
+                color: map-get($pageColors, main);
+                &:hover{
+                    @extend .header__nav__menu__item:hover;
+                    color: map-get($pageColors, main); //Porque boostrap si no lo pone azul
+                }
+            }
+        }
+        //Animaciones
+        &__checkbox:checked ~ &__burger .burger__lines .burger__lines--line1{
+            transform: rotate(45deg);
+            background-color: map-get($pageColors, main);
+        }
+        &__checkbox:checked ~ &__burger .burger__lines--line2{
+            transform: scaleY(0);
+        }
+        &__checkbox:checked ~ &__burger .burger__lines--line3{
+            transform: rotate(-45deg);
+            background-color: map-get($pageColors, main);
+        }
+        &__checkbox:checked ~ &__menu{
+            margin-top: 0px;
+        }
+    }
+}
+// Responsive. El header es igual en tablet y mobile
+@media screen and (min-width: 768px){
+    .header{
+        &__nav{
+            &__burger{
+                display: none;
+            }
+            &__checkbox{
+                display: none;
+            }
+            &__menu{
+                flex-direction: row;
+                transform: translateY(249px); // Se usa esto para eliminar el tiempo de animacion del margin-top 
+                height: 105%;
+                border-bottom: 1px solid map-get($pageColors, dark);
+                box-shadow: none;
+            }
+            // Soluciona error cuando esta checkeado el checkbox y se cambia de media.
+            &__checkbox:checked ~ &__menu{
+                margin-top: -250px;
+            }
+        }
+    }
+}

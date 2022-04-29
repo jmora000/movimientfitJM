@@ -1,4 +1,182 @@
-body {
-  color: red;
+.header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 12vh;
+  min-height: 60px;
+  z-index: 4;
+}
+
+.header__nav {
+  width: 100%;
+  height: 100%;
+}
+
+.header__nav__checkbox {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  height: 32px;
+  width: 32px;
+  margin-top: -16px;
+  opacity: 0;
+  z-index: 5;
+}
+
+.header__nav__burger {
+  height: 100%;
+  width: 100%;
+  background-color: #181813;
+  border-bottom: 1px solid #292929;
+}
+
+.header__nav__burger .burger__lines {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  height: 26px;
+  width: 32px;
+  margin-top: -13px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header__nav__burger .burger__lines span {
+  height: 3px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #bbcc62;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+.header__nav__burger .burger__lines .burger__lines--line1 {
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+}
+
+.header__nav__burger .burger__lines .burger__lines--line3 {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+}
+
+.header__nav__menu {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  gap: 10px;
+  margin-top: -250px;
+  padding: 10px 0px;
+  list-style-type: none;
+  z-index: -1;
+  -webkit-transition: margin-top 300ms ease-in-out;
+  transition: margin-top 300ms ease-in-out;
+  background-color: #181813;
+  -webkit-box-shadow: 0px 0px 15px #292929;
+          box-shadow: 0px 0px 15px #292929;
+}
+
+.header__nav__menu__item, .header__nav__menu__item--selected {
+  text-decoration: none;
+  font-size: 1.7em;
+  color: #ffffff;
+  border-bottom: 10px solid;
+  border-image-slice: 1;
+  border-width: 2px;
+  border-image-source: linear-gradient(to left, #00000000 50%, #bbcc62, #00000000 50%);
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+}
+
+.header__nav__menu__item:hover, .header__nav__menu__item--selected:hover {
+  color: #ffffff;
+  border-image-source: linear-gradient(to left, #00000000 10%, #bbcc62, #00000000 90%);
+}
+
+.header__nav__menu__item--selected {
+  font-weight: bolder;
+  color: #bbcc62;
+}
+
+.header__nav__menu__item--selected:hover {
+  color: #bbcc62;
+}
+
+.header__nav__checkbox:checked ~ .header__nav__burger .burger__lines .burger__lines--line1 {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  background-color: #bbcc62;
+}
+
+.header__nav__checkbox:checked ~ .header__nav__burger .burger__lines--line2 {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+
+.header__nav__checkbox:checked ~ .header__nav__burger .burger__lines--line3 {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  background-color: #bbcc62;
+}
+
+.header__nav__checkbox:checked ~ .header__nav__menu {
+  margin-top: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .header__nav__burger {
+    display: none;
+  }
+  .header__nav__checkbox {
+    display: none;
+  }
+  .header__nav__menu {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-transform: translateY(249px);
+            transform: translateY(249px);
+    height: 105%;
+    border-bottom: 1px solid #181813;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .header__nav__checkbox:checked ~ .header__nav__menu {
+    margin-top: -250px;
+  }
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-size: 10px;
+  -webkit-transition: font-size 400ms;
+  transition: font-size 400ms;
 }
 /*# sourceMappingURL=style.css.map */
