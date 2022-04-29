@@ -4,7 +4,7 @@
     position: fixed;
     top: 0px;
     left: 0px;
-    width: 100vw;
+    width: 100%;
     height: 12vh;
     min-height: 60px;
     z-index: 4;
@@ -25,7 +25,7 @@
             height: 100%;
             width: 100%;
             background-color: map-get($pageColors, dark);
-            border-bottom: 1px solid map-get($pageColors, lightBorder);
+            border-bottom: 2px solid map-get($pageColors, lightBorder);
             .burger__lines{
                 position: absolute;
                 top: 50%;
@@ -120,9 +120,10 @@
             }
             &__menu{
                 flex-direction: row;
-                transform: translateY(249px); // Se usa esto para eliminar el tiempo de animacion del margin-top 
+                padding: 0px;
+                transform: translateY(245px); // Se usa esto para eliminar el tiempo de animacion del margin-top 
                 height: 105%;
-                border-bottom: 1px solid map-get($pageColors, lightBorder);
+                border-bottom: 2px solid map-get($pageColors, lightBorder);
                 box-shadow: none;
             }
             // Soluciona error cuando esta checkeado el checkbox y se cambia de media.

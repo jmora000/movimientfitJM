@@ -2,7 +2,7 @@
   position: fixed;
   top: 0px;
   left: 0px;
-  width: 100vw;
+  width: 100%;
   height: 12vh;
   min-height: 60px;
   z-index: 4;
@@ -28,7 +28,7 @@
   height: 100%;
   width: 100%;
   background-color: #181813;
-  border-bottom: 1px solid #292929;
+  border-bottom: 2px solid #292929;
 }
 
 .header__nav__burger .burger__lines {
@@ -156,10 +156,11 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-transform: translateY(249px);
-            transform: translateY(249px);
+    padding: 0px;
+    -webkit-transform: translateY(245px);
+            transform: translateY(245px);
     height: 105%;
-    border-bottom: 1px solid #292929;
+    border-bottom: 2px solid #292929;
     -webkit-box-shadow: none;
             box-shadow: none;
   }
@@ -176,8 +177,8 @@
       grid-template-rows: 50% 50%;
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
-  top: 11.9vh;
-  width: 100vw;
+  margin-top: 11.9vh;
+  width: 100%;
   height: 88vh;
   background-color: #181813;
 }
@@ -393,6 +394,132 @@
   }
   .overlay__spotify {
     display: block;
+  }
+}
+
+.footer {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 100%;
+  height: 25vh;
+  min-height: 100px;
+  -webkit-box-shadow: inset 0px 0px 10px #292929;
+          box-shadow: inset 0px 0px 10px #292929;
+  color: #f3e5e5;
+}
+
+.footer__container {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: ".      copy    icon1" ".      copy    icon2" "cred   cred    icon3";
+  -ms-grid-columns: 10% 1fr 10%;
+      grid-template-columns: 10% 1fr 10%;
+  justify-items: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 30px;
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  height: 80%;
+  width: 100%;
+  background-color: #181813;
+  border-radius: 50px 50px 0px 0px;
+  margin-top: 40px;
+  -webkit-box-shadow: 0px 0px 10px #292929;
+          box-shadow: 0px 0px 10px #292929;
+}
+
+.footer__container__copyright {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: copy;
+  width: 100%;
+  text-align: center;
+  font-size: 1.35rem;
+}
+
+.footer__container__creditos, .footer__container__creditos a {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: cred;
+  font-size: 1.2rem;
+  margin-left: 10px;
+  font-style: italic;
+}
+
+.footer__container__creditos a {
+  color: #bbcc62;
+  margin-left: 0px;
+}
+
+.footer__container__icons--whats {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: icon1;
+}
+
+.footer__container__icons--face {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: icon2;
+}
+
+.footer__container__icons--insta {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: icon3;
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .footer {
+    -webkit-box-shadow: inset 0px 0px 20px #292929;
+            box-shadow: inset 0px 0px 20px #292929;
+  }
+  .footer__container {
+    width: 90%;
+    -webkit-box-shadow: 0px 0px 20px #292929;
+            box-shadow: 0px 0px 20px #292929;
+  }
+  .footer__container__copyright {
+    font-size: 1.5rem;
+  }
+  .footer__container__creditos, .footer__container__creditos a {
+    font-size: 1.3rem;
+  }
+  .footer__container__creditos a {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    -webkit-box-shadow: inset 0px 0px 20px #292929;
+            box-shadow: inset 0px 0px 20px #292929;
+  }
+  .footer__container {
+    width: 90%;
+    -webkit-box-shadow: 0px 0px 20px #292929;
+            box-shadow: 0px 0px 20px #292929;
+  }
+  .footer__container__copyright {
+    font-size: 1.7rem;
+  }
+  .footer__container__creditos, .footer__container__creditos a {
+    font-size: 1.5rem;
+  }
+  .footer__container__creditos a {
+    font-size: 1.5rem;
   }
 }
 

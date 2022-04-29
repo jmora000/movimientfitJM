@@ -1,0 +1,96 @@
+@import "./vars";
+
+// Contenido del footer
+.footer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 25vh;
+    min-height: 100px;
+    box-shadow: inset 0px 0px 10px map-get($pageColors, lightBorder);
+    color: map-get($pageColors, light);
+    &__container{
+        display: grid;
+        grid-template-areas:
+            ".      copy    icon1"
+            ".      copy    icon2"
+            "cred   cred    icon3";
+        grid-template-columns: 10% 1fr 10%;
+        justify-items: start;
+        align-items: center;
+        padding-top: 30px;
+        grid-template-rows: repeat(3, 1fr);
+        height: 80%;
+        width: 100%;
+        background-color: map-get($pageColors, dark);
+        border-radius: 50px 50px 0px 0px;
+        margin-top: 40px;
+        box-shadow: 0px 0px 10px map-get($pageColors, lightBorder);
+        &__copyright{
+            grid-area: copy;
+            width: 100%;
+            text-align: center;
+            font-size: 1.35rem;
+        }
+        &__creditos{
+            grid-area: cred;
+            font-size: 1.2rem;
+            margin-left: 10px;
+            font-style: italic;
+            a{
+                @extend .footer__container__creditos;
+                color: map-get($pageColors, main);
+                margin-left: 0px;
+            }
+        }
+        &__icons--whats{
+            grid-area: icon1;
+        }
+        &__icons--face{
+            grid-area: icon2;
+        }
+        &__icons--insta{
+            grid-area: icon3;
+        }
+    }
+}
+
+//Responsive desktop
+@media (min-width: 481px) and (max-width: 768px){
+    .footer{
+        box-shadow: inset 0px 0px 20px map-get($pageColors, lightBorder);
+        &__container{
+            width: 90%;
+            box-shadow: 0px 0px 20px map-get($pageColors, lightBorder);
+            &__copyright{
+                font-size: 1.5rem;
+            }
+            &__creditos{
+                font-size: 1.3rem;
+                a{
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 768px){
+    .footer{
+        box-shadow: inset 0px 0px 20px map-get($pageColors, lightBorder);
+        &__container{
+            width: 90%;
+            box-shadow: 0px 0px 20px map-get($pageColors, lightBorder);
+            &__copyright{
+                font-size: 1.7rem;
+            }
+            &__creditos{
+                font-size: 1.5rem;
+                a{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
