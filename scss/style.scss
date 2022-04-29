@@ -1,6 +1,6 @@
-@import "header";
-@import "body";
-@import "components";
+@import "./partials/header";
+@import "./partials/body";
+@import "./partials/components";
 
 //Reset
 *{
