@@ -122,7 +122,7 @@
                 flex-direction: row;
                 transform: translateY(249px); // Se usa esto para eliminar el tiempo de animacion del margin-top 
                 height: 105%;
-                border-bottom: 1px solid map-get($pageColors, dark);
+                border-bottom: 1px solid map-get($pageColors, lightBorder);
                 box-shadow: none;
             }
             // Soluciona error cuando esta checkeado el checkbox y se cambia de media.
