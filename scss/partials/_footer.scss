@@ -21,7 +21,7 @@
         justify-items: start;
         align-items: center;
         padding-top: 30px;
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr 1f; 
         height: 80%;
         width: 100%;
         background-color: map-get($pageColors, dark);
