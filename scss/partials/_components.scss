@@ -2,7 +2,7 @@
 
 @mixin button {
     border-radius: 50px;
-    font-size: 1.5em;
+    font-size: 1rem;
     text-decoration: none;
     text-align: center;
     padding: 10px;
@@ -40,13 +40,13 @@
         position: fixed;
         bottom: 5px;
         left: 5px;
-        width: 5em;
+        width: 50px;
     }
 }
 // Responsive
 @media (min-width: 481px) and (max-width: 768px){
     .button{
-        font-size: 1.5em;
+        font-size: 1rem;
     }
     .overlay__spotify{
         display: block;
@@ -54,7 +54,7 @@
 }
 @media screen and (min-width: 768px){
     .button{
-        font-size: 2em;
+        font-size: 1.25rem;
     }
     .overlay__spotify{
         display: block;

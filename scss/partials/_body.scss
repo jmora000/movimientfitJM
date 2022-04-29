@@ -27,7 +27,7 @@
         h1{
             font-weight: bold;
             text-transform: uppercase;
-            font-size: 3em;
+            font-size: 2rem;
             font-family: 'Barlow', sans-serif;
             text-shadow: 0px 0px 4px map-get($pageColors, main);
             // Mismo color del fondo para lograr un efecto de contorno 
@@ -36,7 +36,7 @@
         }
         h2{
             color: map-get($pageColors, light);
-            font-size: 1.5em;
+            font-size: 1rem;
             font-style: italic;
             text-decoration: underline;
         }
@@ -56,14 +56,14 @@
         }
         svg{
             color: map-get($pageColors, main);
-            width: 3em;
-            height: 3em;
-            min-width: 3em;
+            width: 2rem;
+            height: 2rem;
+            min-width: 2rem;
         }
         p{
             display: inline;
             color: map-get($pageColors, light);
-            font-size: 1.6em;
+            font-size: 1rem;
             margin-bottom: 0px; // Para eliminar un error del boostrap
         }
         &__button{
@@ -85,16 +85,16 @@
                 width: 70%;
             }
             h1{
-                font-size: 4em;
+                font-size: 2.25rem;
             }
             h2{
-                font-size: 2em;
+                font-size: 1.25rem;
             }
         }
         &__description{
             justify-content: space-around;
             p{
-                font-size: 2em;
+                font-size: 1.25rem;
             }
         }
     }
@@ -111,16 +111,16 @@
                 width: 70%;
             }
             h1{
-                font-size: 5em;
+                font-size: 3.15rem;
             }
             h2{
-                font-size: 3em;
+                font-size: 2rem;
             }
         }
         &__description{
             justify-content: space-around;
             p{
-                font-size: 2.5em;
+                font-size: 1.2rem;
             }
         }
     }
