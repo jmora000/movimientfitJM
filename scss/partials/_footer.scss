@@ -1,5 +1,26 @@
 @import "./vars";
 
+//Mixin para los iconos del foooter.
+@mixin icons {
+    width: 20px;
+    height: 20px;
+    color: map-get($pageColors, light);
+    display: block;
+    text-align: center;
+    margin: 0px 25%;
+    &:hover{
+        color: map-get($pageColors, main);
+    }
+    @media (min-width: 481px) and (max-width: 768px){
+        width: 25px;
+        height: 25px;
+    }
+    @media screen and (min-width: 768px){
+        width: 30px;
+        height: 30px;
+    }
+}
+
 // Contenido del footer
 .footer{
     position: relative;
@@ -21,18 +42,22 @@
         justify-items: start;
         align-items: center;
         padding-top: 30px;
-        grid-template-rows: 1fr 1fr 1f; 
+        grid-template-rows: repeat(3,1fr); 
         height: 80%;
         width: 100%;
         background-color: map-get($pageColors, dark);
         border-radius: 50px 50px 0px 0px;
         margin-top: 40px;
+        padding-bottom: 10px;
         box-shadow: 0px 0px 10px map-get($pageColors, lightBorder);
         &__copyright{
             grid-area: copy;
             width: 100%;
             text-align: center;
             font-size: 1rem;
+            &--barra{
+                color: map-get($pageColors, main);
+            }
         }
         &__creditos{
             grid-area: cred;
@@ -46,12 +71,15 @@
             }
         }
         &__icons--whats{
+            @include icons;
             grid-area: icon1;
         }
-        &__icons--face{
+        &__icons--tiktok{
+            @include icons;
             grid-area: icon2;
         }
         &__icons--insta{
+            @include icons;
             grid-area: icon3;
         }
     }

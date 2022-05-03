@@ -111,6 +111,7 @@
 // Responsive. El header es igual en tablet y mobile
 @media screen and (min-width: 768px){
     .header{
+        height: 13vh;
         &__nav{
             &__burger{
                 display: none;
@@ -122,7 +123,7 @@
                 flex-direction: row;
                 padding: 0px;
                 transform: translateY(245px); // Se usa esto para eliminar el tiempo de animacion del margin-top 
-                height: 105%;
+                height: 100%;
                 border-bottom: 2px solid map-get($pageColors, lightBorder);
                 box-shadow: none;
             }
