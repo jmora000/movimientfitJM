@@ -1,4 +1,5 @@
 @import "./vars";
+@import "./components";
 
 //Contenido del  body
 
@@ -7,7 +8,7 @@
     display: grid;
     grid-template-rows: 50% 50%;
     grid-template-columns: 100%;
-    margin-top: 11.9vh;
+    margin-top: 12vh;
     width: 100%;
     height: 88vh;
     background-color: map-get($pageColors, dark);
@@ -46,7 +47,7 @@
         flex-direction: column;
         height: 100%;
         width: 100%;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         div{
             display: flex;
@@ -70,10 +71,30 @@
             width: 100%;
             justify-content: center;
             margin-bottom: 6vh;
+            a{
+                @include button("dark");
+            }
         }
     }
 }
-
+.overlay{
+    &__spotify{
+        display: none;
+        position: fixed;
+        bottom: 5px;
+        right: 5px;
+        iframe{
+            transition: height 400ms;
+            height: 80px;
+        }
+    }
+    &__whatsapp{
+        @include icon(50px);
+        position: fixed;
+        bottom: 5px;
+        left: 5px;
+    }
+}
 // Responsive tablet
 @media (min-width: 481px) and (max-width: 768px){
     .maincontent{
@@ -96,6 +117,11 @@
             p{
                 font-size: 1.25rem;
             }
+        }
+    }
+    .overlay{
+        &__spotify{
+            display: block;
         }
     }
 }
@@ -121,6 +147,14 @@
             justify-content: space-around;
             p{
                 font-size: 1.2rem;
+            }
+        }
+    }
+    .overlay{
+        &__spotify{
+            display: block; 
+            iframe:hover{
+                height: 380px;
             }
         }
     }

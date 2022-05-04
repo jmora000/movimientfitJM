@@ -1,62 +1,92 @@
 @import "./vars";
 
-@mixin button {
+@mixin button ($colorScheme){
     border-radius: 50px;
-    font-size: 1rem;
+    font-size: map-get($fontSize, pPhone);
     text-decoration: none;
     text-align: center;
     padding: 10px;
     transition: all 300ms;
-}
-.button--dark{
-    @include button;
-    background-color: map-get($pageColors, main);
-    border: 3px solid map-get($pageColors, main);
-    color: map-get($pageColors, dark);
-    &:hover{
-        background-color: map-get($pageColors, dark);
-        color: map-get($pageColors, light);
-    }
-}
-.button--light{
-    @include button;
-    background-color: map-get($pageColors, dark);
-    border: 3px solid map-get($pageColors, main);
-    color: map-get($pageColors, main);
-    &:hover{
-        background-color: map-get($pageColors, light);
+    @if $colorScheme == "light"{
+        background-color: map-get($pageColors, main);
         border: 3px solid map-get($pageColors, main);
         color: map-get($pageColors, dark);
+        &:hover{
+            background-color: map-get($pageColors, dark);
+            color: map-get($pageColors, light);
+        }
+    } @else{
+        background-color: map-get($pageColors, main);
+        border: 3px solid map-get($pageColors, main);
+        color: map-get($pageColors, dark);
+        &:hover{
+            background-color: map-get($pageColors, dark);
+            color: map-get($pageColors, light);
+    }
+    }
+    @media (min-width: 481px) and (max-width: 768px){
+        font-size: map-get($fontSize, pTablet);
+    }
+    @media screen and (min-width: 768px){
+        font-size: map-get($fontSize, pDesktop);
     }
 }
-.overlay{
-    &__spotify{
-        display: none;
-        position: fixed;
-        bottom: 5px;
-        right: 5px;
+
+@mixin icon($size){
+    width: $size;
+    height: $size;
+    // Dejar a los iconos centrados
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid map-get($pageColors, main);
+    border-radius: $size;
+    // Imagen de fondo para la animacion
+    overflow: hidden;
+    background: center/cover no-repeat; 
+    background-image: linear-gradient(to top, #bbcc627f 10%, #00000000);
+    background-position-y: $size+20px;
+    transition: all 500ms ease-in-out;
+    a{
+        svg{
+            width: $size*0.6;
+            height: $size*0.6;
+            color: map-get($pageColors, main);
+            transform: rotatex(0deg);
+            transition: all 400ms;
+        }
     }
-    &__whatsapp{
-        position: fixed;
-        bottom: 5px;
-        left: 5px;
-        width: 50px;
+    &:hover{
+        background-image: linear-gradient(to top, #bbcc627f 50%, #00000000);
+        background-position-y: 0px;
+        a{
+            svg{
+                transform: rotateY(360deg);
+                color: map-get($pageColors, dark);
+            }
+        }
     }
-}
-// Responsive
-@media (min-width: 481px) and (max-width: 768px){
-    .button{
-        font-size: 1rem;
+    @media (min-width: 481px) and (max-width: 768px){
+        $tabletSize: $size*1.25;
+        width: $tabletSize;
+        height: $tabletSize;
+        a{
+            svg{
+                width: $tabletSize*0.6;
+                height: $tabletSize*0.6;
+            }
+        }
     }
-    .overlay__spotify{
-        display: block;
-    }
-}
-@media screen and (min-width: 768px){
-    .button{
-        font-size: 1.25rem;
-    }
-    .overlay__spotify{
-        display: block;
+    @media screen and (min-width: 768px){
+        $desktopSize: $size*1.5;
+        height: $desktopSize;
+        width: $desktopSize;
+        a{
+            svg{
+                width: $desktopSize*0.6;
+                height: $desktopSize*0.6;
+            }
+        }
     }
 }

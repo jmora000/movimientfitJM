@@ -20,6 +20,20 @@
             margin-top: -16px; // Para dejar centrado
             opacity: 0;
             z-index: 5;
+            &:checked ~ .header__nav__burger .burger__lines .burger__lines--line1{
+                transform: rotate(45deg);
+                background-color: map-get($pageColors, main);
+            }
+            &:checked ~ .header__nav__burger .burger__lines--line2{
+                transform: scaleY(0);
+            }
+            &:checked ~ .header__nav__burger .burger__lines--line3{
+                transform: rotate(-45deg);
+                background-color: map-get($pageColors, main);
+            }
+            &:checked ~ .header__nav__menu{
+                margin-top: 0px;
+            }
         }
         &__burger{
             height: 100%;
@@ -78,7 +92,7 @@
                 transition: all 250ms ease-in-out;
                 &:hover{
                     color: map-get($pageColors, light); //Porque boostrap si no lo pone azul
-                    border-image-source: linear-gradient(to left, #00000000 10%, map-get($pageColors, main), #00000000 90%)
+                    border-image-source: linear-gradient(to left, #00000000 10%, map-get($pageColors, main), #00000000 90%);
                 }
             }
             &__item--selected{
@@ -90,22 +104,7 @@
                     color: map-get($pageColors, main); //Porque boostrap si no lo pone azul
                 }
             }
-        }
-        //Animaciones
-        &__checkbox:checked ~ &__burger .burger__lines .burger__lines--line1{
-            transform: rotate(45deg);
-            background-color: map-get($pageColors, main);
-        }
-        &__checkbox:checked ~ &__burger .burger__lines--line2{
-            transform: scaleY(0);
-        }
-        &__checkbox:checked ~ &__burger .burger__lines--line3{
-            transform: rotate(-45deg);
-            background-color: map-get($pageColors, main);
-        }
-        &__checkbox:checked ~ &__menu{
-            margin-top: 0px;
-        }
+        }   
     }
 }
 // Responsive. El header es igual en tablet y mobile
