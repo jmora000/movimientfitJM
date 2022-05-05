@@ -83,7 +83,7 @@
             box-shadow: 0px 0px 15px map-get($pageColors, lightBorder);
             &__item{
                 text-decoration: none;
-                font-size: 1.1rem;
+                font-size: map-get($fontSize, pTablet);
                 color: map-get($pageColors, light);
                 border-bottom: 10px solid;
                 border-image-slice: 1;

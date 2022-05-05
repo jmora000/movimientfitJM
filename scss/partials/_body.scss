@@ -28,7 +28,7 @@
         h1{
             font-weight: bold;
             text-transform: uppercase;
-            font-size: 2rem;
+            font-size: map-get($fontSize, h1Phone);
             font-family: 'Barlow', sans-serif;
             text-shadow: 0px 0px 4px map-get($pageColors, main);
             // Mismo color del fondo para lograr un efecto de contorno 
@@ -37,9 +37,10 @@
         }
         h2{
             color: map-get($pageColors, light);
-            font-size: 1rem;
+            font-size: map-get($fontSize, h2Phone);
             font-style: italic;
             text-decoration: underline;
+            text-align: center;
         }
     }
     &__description{
@@ -57,14 +58,15 @@
         }
         svg{
             color: map-get($pageColors, main);
-            width: 2rem;
-            height: 2rem;
-            min-width: 2rem;
+            width: map-get($fontSize, pPhone);
+            height: map-get($fontSize, pPhone);
+            min-width: map-get($fontSize, pPhone); //Si no tiene esto se achica por el flex
+            min-height: map-get($fontSize, pPhone);
         }
         p{
             display: inline;
             color: map-get($pageColors, light);
-            font-size: 1rem;
+            font-size: map-get($fontSize, pPhone);
             margin-bottom: 0px; // Para eliminar un error del boostrap
         }
         &__button{
@@ -106,16 +108,22 @@
                 width: 70%;
             }
             h1{
-                font-size: 2.25rem;
+                font-size: map-get($fontSize, h1Tablet);
             }
             h2{
-                font-size: 1.25rem;
+                font-size: map-get($fontSize, h2Tablet);
             }
         }
         &__description{
             justify-content: space-around;
+            svg{
+                width: map-get($fontSize, pTablet);
+                height: map-get($fontSize, pTablet);
+                min-width: map-get($fontSize, pTablet); //Si no tiene esto se achica por el flex
+                min-height: map-get($fontSize, pTablet);
+            }
             p{
-                font-size: 1.25rem;
+                font-size: map-get($fontSize, pTablet);
             }
         }
     }
@@ -125,7 +133,6 @@
         }
     }
 }
-
 //Responsive desktop
 @media screen and (min-width: 768px){
     .maincontent{
@@ -137,16 +144,22 @@
                 width: 70%;
             }
             h1{
-                font-size: 3.15rem;
+                font-size: map-get($fontSize, h1Desktop);
             }
             h2{
-                font-size: 2rem;
+                font-size: map-get($fontSize, h2Desktop);
             }
         }
         &__description{
             justify-content: space-around;
+            svg{
+                height: map-get($fontSize, pDesktop);
+                width: map-get($fontSize, pDesktop);
+                min-width: map-get($fontSize, pDesktop); //Si no tiene esto se achica por el flex
+                min-height: map-get($fontSize, pDesktop);
+            }
             p{
-                font-size: 1.2rem;
+                font-size: map-get($fontSize, pDesktop);
             }
         }
     }

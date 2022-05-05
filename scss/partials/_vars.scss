@@ -6,7 +6,20 @@ $pageColors:(
 );
 
 $fontSize:(
+    smallpPhone: 0.6rem,
+    smallpTablet: 0.8rem,
+    smallpDesktop: 1rem,
+
     pPhone: 1rem,
     pTablet: 1.2rem,
     pDesktop: 1.4rem,
+
+    h2Phone: 1.4rem,
+    h2Tablet: 1.6rem,
+    h2Desktop: 1.8rem,
+    
+    h1Phone: 2.2rem,
+    h1Tablet: 2.4rem,
+    h1Desktop: 2.6rem,
+
 );
