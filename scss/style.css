@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .header {
   position: fixed;
   top: 0px;
@@ -172,14 +173,55 @@
   }
 }
 
+@-webkit-keyframes clickAnimation {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+}
+
+@keyframes clickAnimation {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+}
+
+@-webkit-keyframes upNdown {
+  from {
+    -webkit-transform: translateY(-1px);
+            transform: translateY(-1px);
+  }
+  to {
+    -webkit-transform: translateY(1px);
+            transform: translateY(1px);
+  }
+}
+
+@keyframes upNdown {
+  from {
+    -webkit-transform: translateY(-1px);
+            transform: translateY(-1px);
+  }
+  to {
+    -webkit-transform: translateY(1px);
+            transform: translateY(1px);
+  }
+}
+
 .maincontent {
   position: relative;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 50% 50%;
-      grid-template-rows: 50% 50%;
-  -ms-grid-columns: 100%;
-      grid-template-columns: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin-top: 12vh;
   width: 100%;
   height: 88vh;
@@ -286,16 +328,34 @@
   text-decoration: none;
   text-align: center;
   padding: 10px;
-  -webkit-transition: all 300ms;
-  transition: all 300ms;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
   background-color: #bbcc62;
   border: 3px solid #bbcc62;
   color: #181813;
 }
 
+.maincontent__description__button a::after {
+  content: "\00a0\00a0\00a0";
+  display: inline-block;
+}
+
 .maincontent__description__button a:hover {
   background-color: #181813;
   color: #f3e5e5;
+}
+
+.maincontent__description__button a:hover::after {
+  content: "\00a0 »";
+  -webkit-animation: upNdown 300ms ease-in-out infinite alternate;
+          animation: upNdown 300ms ease-in-out infinite alternate;
+}
+
+.maincontent__description__button a:focus {
+  -webkit-animation-name: clickAnimation;
+          animation-name: clickAnimation;
+  -webkit-animation-duration: 100ms;
+          animation-duration: 100ms;
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
@@ -308,6 +368,11 @@
   .maincontent__description__button a {
     font-size: 1.4rem;
   }
+}
+
+.asesorados {
+  width: 100%;
+  height: 100vh;
 }
 
 .overlay__spotify {
@@ -346,8 +411,8 @@
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #bbcc627f), to(#00000000));
   background-image: linear-gradient(to top, #bbcc627f 10%, #00000000);
   background-position-y: 70px;
-  -webkit-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
+  -webkit-transition: all 500ms ease-in-out, translateY 100ms;
+  transition: all 500ms ease-in-out, translateY 100ms;
   position: fixed;
   bottom: 5px;
   left: 5px;
@@ -359,8 +424,8 @@
   color: #bbcc62;
   -webkit-transform: rotatex(0deg);
           transform: rotatex(0deg);
-  -webkit-transition: all 400ms;
-  transition: all 400ms;
+  -webkit-transition: all 400ms, translateY 100ms;
+  transition: all 400ms, translateY 100ms;
 }
 
 .overlay__whatsapp:hover {
@@ -470,6 +535,50 @@
   }
 }
 
+@keyframes clickAnimation {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+}
+
+@keyframes upNdown {
+  from {
+    -webkit-transform: translateY(-1px);
+            transform: translateY(-1px);
+  }
+  to {
+    -webkit-transform: translateY(1px);
+            transform: translateY(1px);
+  }
+}
+
+@keyframes clickAnimation {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+}
+
+@keyframes upNdown {
+  from {
+    -webkit-transform: translateY(-1px);
+            transform: translateY(-1px);
+  }
+  to {
+    -webkit-transform: translateY(1px);
+            transform: translateY(1px);
+  }
+}
+
 .footer {
   position: relative;
   display: -webkit-box;
@@ -568,8 +677,8 @@
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #bbcc627f), to(#00000000));
   background-image: linear-gradient(to top, #bbcc627f 10%, #00000000);
   background-position-y: 50px;
-  -webkit-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
+  -webkit-transition: all 500ms ease-in-out, translateY 100ms;
+  transition: all 500ms ease-in-out, translateY 100ms;
   -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: icon1;
@@ -582,8 +691,8 @@
   color: #bbcc62;
   -webkit-transform: rotatex(0deg);
           transform: rotatex(0deg);
-  -webkit-transition: all 400ms;
-  transition: all 400ms;
+  -webkit-transition: all 400ms, translateY 100ms;
+  transition: all 400ms, translateY 100ms;
 }
 
 .footer__container__icons--whats:hover {
@@ -643,8 +752,8 @@
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #bbcc627f), to(#00000000));
   background-image: linear-gradient(to top, #bbcc627f 10%, #00000000);
   background-position-y: 50px;
-  -webkit-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
+  -webkit-transition: all 500ms ease-in-out, translateY 100ms;
+  transition: all 500ms ease-in-out, translateY 100ms;
   -ms-grid-row: 2;
   -ms-grid-column: 3;
   grid-area: icon2;
@@ -657,8 +766,8 @@
   color: #bbcc62;
   -webkit-transform: rotatex(0deg);
           transform: rotatex(0deg);
-  -webkit-transition: all 400ms;
-  transition: all 400ms;
+  -webkit-transition: all 400ms, translateY 100ms;
+  transition: all 400ms, translateY 100ms;
 }
 
 .footer__container__icons--tiktok:hover {
@@ -718,8 +827,8 @@
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #bbcc627f), to(#00000000));
   background-image: linear-gradient(to top, #bbcc627f 10%, #00000000);
   background-position-y: 50px;
-  -webkit-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
+  -webkit-transition: all 500ms ease-in-out, translateY 100ms;
+  transition: all 500ms ease-in-out, translateY 100ms;
   -ms-grid-row: 3;
   -ms-grid-column: 3;
   grid-area: icon3;
@@ -732,8 +841,8 @@
   color: #bbcc62;
   -webkit-transform: rotatex(0deg);
           transform: rotatex(0deg);
-  -webkit-transition: all 400ms;
-  transition: all 400ms;
+  -webkit-transition: all 400ms, translateY 100ms;
+  transition: all 400ms, translateY 100ms;
 }
 
 .footer__container__icons--insta:hover {

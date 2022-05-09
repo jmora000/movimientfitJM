@@ -1,12 +1,30 @@
 @import "./vars";
 
+@keyframes clickAnimation {
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(5px);
+    }
+}
+
+@keyframes upNdown {
+    from {transform: translateY(-1px);}
+    to {transform: translateY(1px);}
+}
+
 @mixin button ($colorScheme){
     border-radius: 50px;
     font-size: map-get($fontSize, pPhone);
     text-decoration: none;
-    text-align: center;
+    text-align: center; 
     padding: 10px;
-    transition: all 300ms;
+    transition: all 500ms;
+    &::after{
+        content: "\00a0\00a0\00a0"; //Dejo espacio para los dos caracteres que van a aparecer despues.
+        display: inline-block; //Sin esto la animacion no funciona.
+    } 
     @if $colorScheme == "light"{
         background-color: map-get($pageColors, main);
         border: 3px solid map-get($pageColors, main);
@@ -22,7 +40,17 @@
         &:hover{
             background-color: map-get($pageColors, dark);
             color: map-get($pageColors, light);
+        }
     }
+    &:hover{
+        &::after{
+            content: "\00a0 »";
+            animation: upNdown 300ms ease-in-out infinite alternate;
+        }
+    }
+    &:focus{
+        animation-name: clickAnimation;
+        animation-duration: 100ms;
     }
     @media (min-width: 481px) and (max-width: 768px){
         font-size: map-get($fontSize, pTablet);
@@ -46,15 +74,15 @@
     overflow: hidden;
     background: center/cover no-repeat; 
     background-image: linear-gradient(to top, #bbcc627f 10%, #00000000);
-    background-position-y: $size+20px;
-    transition: all 500ms ease-in-out;
+    background-position-y: $size+20px; //La saco fuera de la pantalla
+    transition: all 500ms ease-in-out, translateY 100ms;
     a{
         svg{
             width: $size*0.6;
             height: $size*0.6;
             color: map-get($pageColors, main);
             transform: rotatex(0deg);
-            transition: all 400ms;
+            transition: all 400ms, translateY 100ms;
         }
     }
     &:hover{
