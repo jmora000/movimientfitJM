@@ -22,6 +22,7 @@ h2{
 }
 p, a{
     font-size: map-get($fontSize, pPhone);
+    margin-bottom: 0rem;
 }
 // Responsive tablet
 @media (min-width: 481px) and (max-width: 768px){

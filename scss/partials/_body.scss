@@ -5,7 +5,7 @@
 .maincontent{
     position: relative;
     display: grid;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: 40% 60%;
     grid-template-columns: 100%;
     align-items: center;
     margin-top: 12vh;
@@ -64,6 +64,24 @@
                 display: inline;
                 color: map-get($pageColors, light);
                 margin-bottom: 0px; // Para eliminar un error del boostrap
+            }
+        }
+        &__texto{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0px 8% 0px 8%;
+            h2{
+                color: map-get($pageColors, light);
+                text-decoration: underline;
+            }
+            p{
+                color: map-get($pageColors, main);
+                span{
+                    color: map-get($pageColors, light);
+                    font-size: map-get($fontSize, smallpPhone)
+                }
             }
         }
         &__button{
@@ -153,6 +171,18 @@
         @include button("light");
     }
 }
+.infoinstagram{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 40px;
+    gap: 40px;
+    background-color: map-get($pageColors, light);
+    article{
+        box-shadow: 0px 0px 10px map-get($pageColors, dark);
+    }
+}
 .overlay{
     &__spotify{
         display: none;
@@ -189,6 +219,13 @@
                 height: map-get($fontSize, pTablet);
                 min-width: map-get($fontSize, pTablet); //Si no tiene esto se achica por el flex
                 min-height: map-get($fontSize, pTablet);
+            }
+            &__texto{
+                p{
+                    span{
+                        font-size: map-get($fontSize, smallpTablet);
+                    }
+                }
             }
         }
     }
@@ -232,6 +269,13 @@
                 width: map-get($fontSize, pDesktop);
                 min-width: map-get($fontSize, pDesktop); //Si no tiene esto se achica por el flex
                 min-height: map-get($fontSize, pDesktop);
+            }
+            &__texto{
+                p{
+                    span{
+                        font-size: map-get($fontSize, smallpDesktop);
+                    }
+                }
             }
         }
     }
