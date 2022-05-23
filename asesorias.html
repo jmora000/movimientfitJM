@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Título de la página -->
-    <title>MovimientoFit | Inicio</title>
+    <title>MovimientoFit | Asesorías</title>
     <!-- Ícono -->
     <link rel="shortcut icon" href="./img/logo.png">
+    <!-- Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="./scss/style.css">
     <!-- Fuentes -->
@@ -17,8 +19,6 @@
     <!-- Etiquetas de SEO -->
     <meta name="description" content="Planes de entrenamiento armados a medida, con medios de comunicación disponible a lo largo de todo el día.">
     <meta name="keywords" content="movimientofit,joaquin,murua,joaco,entrenamiento,gimnacio,plan,training,asesoramiento,entrenamiento,hipertrofia,musculacion,aerobico,dieta,personalizado">
-    <!-- Boostrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body id="asesorias">
     <!-- Encabezado -->
@@ -100,27 +100,59 @@
         </section>
         <!-- Asesorados -->
         <section class="asesorados">
-            <div class="asesorados__contenedor">
-                <!-- Persona 1 -->
-                <div class="asesorados__contenedor--secundario">
-                    <img src="./img/asesorado1.PNG" alt="foto-asesorado1">
-                    <p class="frase-entrenado">"Joaco me ayudo en mi cambio físico! Todo el esfuerzo valió la pena"</p>
-                    <p class="nombre-entrenado">- David Guetta</p>
+            <div id="carouselAsesorados" class="asesorados__carousel carousel slide" data-ride="carousel">
+                <div class="asesorados__carousel__contenedor carousel-inner h-100" data-ride="carousel">
+                    <!-- Persona 1 -->
+                    <div class="carousel-item active h-75">
+                        <div class="asesorados__carousel__contenedor__asesorado">
+                            <div class="asesorados__carousel__contenedor__asesorado__imgs">
+                                <img  class="asesorados__carousel__contenedor__asesorado__imgs__desp" src="./img/asesorado1despues.jpg" alt="foto-asesorado1despues">
+                                <img class="asesorados__carousel__contenedor__asesorado__imgs__antes" src="./img/asesorado1antes.jpg" alt="foto-asesorado1antes">
+                            </div>
+                            <p class="asesorados__carousel__contenedor__asesorado__frase">Joaco me ayudo en mi cambio físico! Todo el esfuerzo valió la pena</p>
+                            <p class="asesorados__carousel__contenedor__asesorado__nombre">David</p>
+                        </div>
+                    </div>
+                    <!-- Persona 2 -->
+                    <div class="carousel-item h-75" data-bs-interval="100000">
+                        <div class="asesorados__carousel__contenedor__asesorado">
+                            <div class="asesorados__carousel__contenedor__asesorado__imgs">
+                                <img  class="asesorados__carousel__contenedor__asesorado__imgs__desp" src="./img/asesorado2despues.jpg" alt="foto-asesorado1despues">
+                                <img class="asesorados__carousel__contenedor__asesorado__imgs__antes" src="./img/asesorado2antes.jpg" alt="foto-asesorado1antes">
+                            </div>
+                            <p class="asesorados__carousel__contenedor__asesorado__frase">Bajé la panza en tan solo 4 meses. Joaco siempre estuvo presente y muy atento</p>
+                            <p class="asesorados__carousel__contenedor__asesorado__nombre">Marcos</p>
+                        </div>
+                    </div>
+                    <!-- Persona 3 -->
+                    <div class="carousel-item h-75">
+                        <div class="asesorados__carousel__contenedor__asesorado">
+                            <div class="asesorados__carousel__contenedor__asesorado__imgs">
+                                <img  class="asesorados__carousel__contenedor__asesorado__imgs__desp" src="./img/asesorado3despues.jpg" alt="foto-asesorado1despues">
+                                <img class="asesorados__carousel__contenedor__asesorado__imgs__antes" src="./img/asesorado3antes.jpg" alt="foto-asesorado1antes">
+                            </div>
+                            <p class="asesorados__carousel__contenedor__asesorado__frase">Tuve un gran cambio en relativamente poco tiempo. Es un gran esfuerzo pero estoy viendo buenos resultados</p>
+                            <p class="asesorados__carousel__contenedor__asesorado__nombre">Lucas</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- Persona 2 -->
-                <div class="asesorados__contenedor--main">
-                    <img src="./img/asesorado2.PNG" alt="foto-asesorado2">
-                    <p class="frase-entrenado">"Bajé la panza en tan solo 4 meses. Joaco siempre estuvo presente y muy atento"</p>
-                    <p class="nombre-entrenado">- Ricardo Arjona</p>
-                </div>
-                <!-- Persona 3 -->
-                <div class="asesorados__contenedor--secundario">
-                    <img src="./img/asesorado3.PNG" alt="foto-asesorado3">
-                    <p class="frase-entrenado">"Pensé que iba a tener que dejar de comer churros, pero la dieta es muy permisiva y se puede mantener a lo largo del tiempo"</p>
-                    <p class="nombre-entrenado">- Willyrex</p>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselAsesorados" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselAsesorados" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselAsesorados" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselAsesorados" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselAsesorados" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
             </div>
-            <a href="./contacto.html" class="boton">Información de contacto 🠒</a>
+            <div class="asesorados__button">
+                <a href="./contacto.html">Información de contacto</a>
+            </div>
         </section>
         <!-- Overlay de whatsapp y spotify -->
         <div class="overlay">

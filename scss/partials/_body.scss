@@ -4,7 +4,10 @@
 //Contenido del  body
 .maincontent{
     position: relative;
-    display: flex;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 100%;
+    align-items: center;
     margin-top: 12vh;
     width: 100%;
     height: 88vh;
@@ -14,10 +17,10 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100%;
+        height: 50%;
         width: 100%;
         img{
-            height: 70%;
+            height: 100%;
             border-radius: 50%;
             border: 3px solid map-get($pageColors, light);
             padding: 5px;
@@ -25,7 +28,6 @@
         h1{
             font-weight: bold;
             text-transform: uppercase;
-            font-size: map-get($fontSize, h1Phone);
             font-family: 'Barlow', sans-serif;
             text-shadow: 0px 0px 4px map-get($pageColors, main);
             // Mismo color del fondo para lograr un efecto de contorno 
@@ -34,7 +36,6 @@
         }
         h2{
             color: map-get($pageColors, light);
-            font-size: map-get($fontSize, h2Phone);
             font-style: italic;
             text-decoration: underline;
             text-align: center;
@@ -47,39 +48,109 @@
         width: 100%;
         justify-content: space-around;
         align-items: center;
-        div{
+        &__frase{
             display: flex;
             align-items: center;
             width: 80%;
             gap: 10px;
-        }
-        svg{
-            color: map-get($pageColors, main);
-            width: map-get($fontSize, pPhone);
-            height: map-get($fontSize, pPhone);
-            min-width: map-get($fontSize, pPhone); //Si no tiene esto se achica por el flex
-            min-height: map-get($fontSize, pPhone);
-        }
-        p{
-            display: inline;
-            color: map-get($pageColors, light);
-            font-size: map-get($fontSize, pPhone);
-            margin-bottom: 0px; // Para eliminar un error del boostrap
+            svg{
+                color: map-get($pageColors, main);
+                width: map-get($fontSize, pPhone);
+                height: map-get($fontSize, pPhone);
+                min-width: map-get($fontSize, pPhone); //Si no tiene esto se achica por el flex
+                min-height: map-get($fontSize, pPhone);
+            }
+            p{
+                display: inline;
+                color: map-get($pageColors, light);
+                margin-bottom: 0px; // Para eliminar un error del boostrap
+            }
         }
         &__button{
-            width: 100%;
-            justify-content: center;
+            @include button("dark");
             margin-bottom: 6vh;
-            a{
-                @include button("dark");
-            }
         }
     }
 }
 .asesorados{
     width: 100%;
-    height: 100vh;
-
+    height: 88vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: map-get($pageColors, light);
+    &__carousel{
+        width: 80%;
+        height: 70%;
+        background-color: map-get($pageColors, dark);
+        border-radius: 50px;
+        &__contenedor{
+            &__asesorado{
+                display: flex;
+                flex-direction: column;
+                margin-top: 5%;
+                margin-left: 15%;
+                padding: 3%;
+                justify-content: space-between;
+                height: 100%;
+                width: 70%;
+                border: 3px solid map-get($pageColors, main);
+                border-radius: 20px;
+                color: map-get($pageColors, light);
+                overflow: hidden;
+                align-items: center;
+                &__imgs{
+                    $size: 150px;
+                    position: relative;
+                    width: $size;
+                    height: $size;
+                    img{
+                        width: $size;
+                        height: $size;
+                        border-radius: 20px;
+                        position: absolute;
+                        transition: all 400ms;
+                    }
+                    &__desp{
+                        z-index: 1;
+                        transform: rotateY(0deg);
+                    }
+                    &__antes{
+                        z-index: 0;
+                        transform: rotateY(0deg);
+                    }
+                    &:hover > .asesorados__carousel__contenedor__asesorado__imgs__desp{
+                        transform: rotateY(180deg);
+                        z-index: 0;
+                    }
+                    &:hover > .asesorados__carousel__contenedor__asesorado__imgs__antes{
+                        transform: rotateY(180deg);
+                        z-index: 1;
+                    }
+                }
+                &__frase{
+                    text-align: center;
+                    font-style: italic;
+                    font-size: map-get($fontSize, smallpPhone);
+                    &::before, &::after{
+                        content: "\"";
+                    }
+                }
+                &__nombre{
+                    font-weight: bold;
+                    align-self: flex-start;
+                    &::before{
+                        content: "- ";
+                    }
+                }
+            }
+        }
+    }
+    &__button{
+        @include button("light");
+    }
 }
 .overlay{
     &__spotify{
@@ -109,12 +180,6 @@
                 height: unset;
                 width: 70%;
             }
-            h1{
-                font-size: map-get($fontSize, h1Tablet);
-            }
-            h2{
-                font-size: map-get($fontSize, h2Tablet);
-            }
         }
         &__description{
             justify-content: space-around;
@@ -124,8 +189,21 @@
                 min-width: map-get($fontSize, pTablet); //Si no tiene esto se achica por el flex
                 min-height: map-get($fontSize, pTablet);
             }
-            p{
-                font-size: map-get($fontSize, pTablet);
+        }
+    }
+    .asesorados{
+        &__carousel{
+            &__contenedor{
+                &__asesorado{
+                    margin-left: 25%;
+                    width: 50%;
+                    &__frase{
+                        font-size: map-get($fontSize, smallpTablet);
+                    }
+                    &__nombre{
+                        font-size: map-get($fontSize, pTablet);
+                    }
+                }
             }
         }
     }
@@ -145,12 +223,6 @@
                 height: unset;
                 width: 70%;
             }
-            h1{
-                font-size: map-get($fontSize, h1Desktop);
-            }
-            h2{
-                font-size: map-get($fontSize, h2Desktop);
-            }
         }
         &__description{
             justify-content: space-around;
@@ -160,8 +232,22 @@
                 min-width: map-get($fontSize, pDesktop); //Si no tiene esto se achica por el flex
                 min-height: map-get($fontSize, pDesktop);
             }
-            p{
-                font-size: map-get($fontSize, pDesktop);
+        }
+    }
+    .asesorados{
+        &__carousel{
+            width: 50%;
+            &__contenedor{
+                &__asesorado{
+                    margin-left: 25%;
+                    width: 50%;
+                    &__frase{
+                        font-size: map-get($fontSize, smallpTablet);
+                    }
+                    &__nombre{
+                        font-size: map-get($fontSize, pDesktop);
+                    }
+                }
             }
         }
     }

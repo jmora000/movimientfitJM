@@ -2,6 +2,7 @@
 @import "./partials/body";
 @import "./partials/components";
 @import "./partials/footer";
+@import "./partials/vars";
 
 //Reset
 *{
@@ -11,4 +12,39 @@
     box-sizing: border-box;
     scroll-behavior: smooth; 
     transition: font-size 400ms;
+}
+// Configuraciones genericas
+h1{
+    font-size: map-get($fontSize, h1Phone);
+}
+h2{
+    font-size: map-get($fontSize, h2Phone);
+}
+p, a{
+    font-size: map-get($fontSize, pPhone);
+}
+// Responsive tablet
+@media (min-width: 481px) and (max-width: 768px){
+    h1{
+        font-size: map-get($fontSize, h1Tablet);
+    }
+    h2{
+        font-size: map-get($fontSize, h2Tablet);
+    }
+    p, a{
+        font-size: map-get($fontSize, pTablet);
+    }
+}
+
+//Responsive desktop
+@media screen and (min-width: 768px){
+    h1{
+        font-size: map-get($fontSize, h1Desktop);
+    }
+    h2{
+        font-size: map-get($fontSize, h2Desktop);
+    }
+    p, a{
+        font-size: map-get($fontSize, pDesktop);
+    }
 }

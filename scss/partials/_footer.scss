@@ -10,7 +10,7 @@
     width: 100%;
     height: 300px;
     min-height: 100px;
-    box-shadow: inset 0px 0px 10px map-get($pageColors, lightBorder);
+    background-color: map-get($pageColors, light);
     color: map-get($pageColors, light);
     &__container{
         display: grid;
@@ -18,13 +18,13 @@
             ".      copy    icon1"
             ".      copy    icon2"
             "cred   cred    icon3";
-        grid-template-columns: 10% 1fr 10%;
+        grid-template-columns: 15% 1fr 15%;
         justify-items: start;
         align-items: center;
         padding-top: 30px;
         grid-template-rows: repeat(3,1fr); 
         height: 80%;
-        width: 100%;
+        width: 95%;
         background-color: map-get($pageColors, dark);
         border-radius: 50px 50px 0px 0px;
         margin-top: 40px;
@@ -34,7 +34,6 @@
             grid-area: copy;
             width: 100%;
             text-align: center;
-            font-size: map-get($fontSize, pPhone);
             &--barra{
                 color: map-get($pageColors, main);
             }
@@ -74,13 +73,9 @@
 //Responsive desktop
 @media (min-width: 481px) and (max-width: 768px){
     .footer{
-        box-shadow: inset 0px 0px 20px map-get($pageColors, lightBorder);
         &__container{
             width: 90%;
             box-shadow: 0px 0px 20px map-get($pageColors, lightBorder);
-            &__copyright{
-                font-size: map-get($fontSize, pTablet);
-            }
             &__creditos{
                 font-size: map-get($fontSize, smallpTablet);
             }
@@ -89,13 +84,9 @@
 }
 @media screen and (min-width: 768px){
     .footer{
-        box-shadow: inset 0px 0px 20px map-get($pageColors, lightBorder);
         &__container{
             width: 90%;
             box-shadow: 0px 0px 20px map-get($pageColors, lightBorder);
-            &__copyright{
-                font-size: map-get($fontSize, pDesktop);
-            }
             &__creditos{
                 font-size: map-get($fontSize, smallpDesktop);
             }

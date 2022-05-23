@@ -15,48 +15,49 @@
 }
 
 @mixin button ($colorScheme){
-    border-radius: 50px;
-    font-size: map-get($fontSize, pPhone);
-    text-decoration: none;
-    text-align: center; 
-    padding: 10px;
-    transition: all 500ms;
-    &::after{
-        content: "\00a0\00a0\00a0"; //Dejo espacio para los dos caracteres que van a aparecer despues.
-        display: inline-block; //Sin esto la animacion no funciona.
-    } 
-    @if $colorScheme == "light"{
-        background-color: map-get($pageColors, main);
-        border: 3px solid map-get($pageColors, main);
-        color: map-get($pageColors, dark);
-        &:hover{
-            background-color: map-get($pageColors, dark);
-            color: map-get($pageColors, light);
-        }
-    } @else{
-        background-color: map-get($pageColors, main);
-        border: 3px solid map-get($pageColors, main);
-        color: map-get($pageColors, dark);
-        &:hover{
-            background-color: map-get($pageColors, dark);
-            color: map-get($pageColors, light);
-        }
-    }
-    &:hover{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    a{
+        border-radius: 50px;
+        text-decoration: none;
+        text-align: center; 
+        padding: 10px;
+        transition: all 500ms;
         &::after{
-            content: "\00a0 »";
-            animation: upNdown 300ms ease-in-out infinite alternate;
+            content: "\00a0\00a0\00a0"; //Dejo espacio para los dos caracteres que van a aparecer despues.
+            display: inline-block; //Sin esto la animacion no funciona.
+        } 
+        &::before{
+            content: "\00a0\00a0\00a0"; //Simplemente para que tenga simetria
+        } 
+        @if $colorScheme == "light"{
+            background-color: map-get($pageColors, main);
+            border: 3px solid map-get($pageColors, main);
+            color: map-get($pageColors, dark);
+            &:hover{
+                background-color: map-get($pageColors, lightMain);
+                color: map-get($pageColors, dark);
+            }
+        } @else{
+            background-color: map-get($pageColors, main);
+            border: 3px solid map-get($pageColors, main);
+            color: map-get($pageColors, dark);
+            &:hover{
+                background-color: map-get($pageColors, dark);
+                color: map-get($pageColors, light);
+            }
         }
-    }
-    &:focus{
-        animation-name: clickAnimation;
-        animation-duration: 100ms;
-    }
-    @media (min-width: 481px) and (max-width: 768px){
-        font-size: map-get($fontSize, pTablet);
-    }
-    @media screen and (min-width: 768px){
-        font-size: map-get($fontSize, pDesktop);
+        &:hover{
+            &::after{
+                content: "\00a0 »";
+                animation: upNdown 300ms ease-in-out infinite alternate;
+            }
+        }
+        &:focus{
+            animation-name: clickAnimation;
+            animation-duration: 100ms;
+        }
     }
 }
 
@@ -86,7 +87,7 @@
         }
     }
     &:hover{
-        background-image: linear-gradient(to top, #bbcc627f 50%, #00000000);
+        background-image: linear-gradient(to top, map-get($pageColors, lightMain) 50%, #00000000);
         background-position-y: 0px;
         a{
             svg{
