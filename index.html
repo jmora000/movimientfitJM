@@ -8,8 +8,10 @@
     <title>MovimientoFit | Inicio</title>
     <!-- Ícono -->
     <link rel="shortcut icon" href="./img/logo.png">
-    <!-- Boostrap -->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Animaciones -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="./scss/style.css">
     <!-- Fuentes -->
@@ -47,35 +49,35 @@
     <main>
         <!-- Contenido principal, informacion de Joaquín -->
         <section class="maincontent">
-            <div class="maincontent__main">
+            <div class="maincontent__main" data-aos="fade" data-aos-duration="2000">
                 <img src="./img/portada.PNG" alt="foto-joaquin-murua">
                 <h1>Joaco Trainer</h1>
                 <h2>Entrenador Personal</h2>
             </div>
             <!-- Frases principales -->
             <div class="maincontent__description">
-                <div class="maincontent__description__frase">
+                <div class="maincontent__description__frase" data-aos="fade-down" data-aos-delay="400">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
                         <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
                         <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
                     </svg>
                     <p>Estudiante de profesorado de Educación Física</p>
                 </div>
-                <div class="maincontent__description__frase">
+                <div class="maincontent__description__frase" data-aos="fade-down" data-aos-delay="800">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
                         <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
                         <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
                     </svg>
                     <p>Personal Trainer</p>
                 </div>
-                <div class="maincontent__description__frase">
+                <div class="maincontent__description__frase" data-aos="fade-down" data-aos-delay="1200">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
                         <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
                         <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
                     </svg>
                     <p>Curso experto en Biomecánica</p>
                 </div>
-                <div class="maincontent__description__button">
+                <div class="maincontent__description__button" data-aos="fade-down" data-aos-delay="1600">
                     <a href="./asesorias.html">Asesorías 100% personalizadas</a>
                 </div>
             </div>
@@ -113,6 +115,10 @@
             </div>
         </div>
     </footer>
+    <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- Animate On Scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script> AOS.init(); </script>
 </body>
 </html>

@@ -86,6 +86,7 @@
         height: 70%;
         background-color: map-get($pageColors, dark);
         border-radius: 50px;
+        box-shadow: 0px 0px 30px map-get($pageColors, dark);
         &__contenedor{
             &__asesorado{
                 display: flex;
