@@ -84,10 +84,31 @@
                     font-size: map-get($fontSize, pPhone)
                 }
             }
+            &__contacto{
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                justify-content: center;
+                margin-top: 6vh;
+                svg{
+                    color: map-get($pageColors, main);
+                    width: map-get($fontSize, h2Phone);
+                    height: map-get($fontSize, h2Phone);
+                    min-width: map-get($fontSize, h2Phone); //Si no tiene esto se achica por el flex
+                    min-height: map-get($fontSize, h2Phone);
+                }
+                h2{
+                    display: inline;
+                    text-decoration: none;
+                    color: map-get($pageColors, light);
+                    margin-bottom: 0px; // Para eliminar un error del boostrap
+                    
+                }
+            }
         }
         &__button{
             @include button("dark");
-            margin-bottom: 6vh;
+            margin-bottom: 15vh;
         }
     }
 }
