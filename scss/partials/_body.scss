@@ -77,10 +77,11 @@
                 text-decoration: underline;
             }
             p{
-                color: map-get($pageColors, main);
+                color: map-get($pageColors, light);
+                font-size: map-get($fontSize, smallpPhone);
                 span{
-                    color: map-get($pageColors, light);
-                    font-size: map-get($fontSize, smallpPhone)
+                    color: map-get($pageColors, main);
+                    font-size: map-get($fontSize, pPhone)
                 }
             }
         }
@@ -176,11 +177,43 @@
     flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
-    padding-top: 40px;
+    padding: 40px 0px 10px 0px;
     gap: 40px;
     background-color: map-get($pageColors, light);
     article{
         box-shadow: 0px 0px 10px map-get($pageColors, dark);
+    }
+}
+.timeline{
+    display: flex;
+    flex-direction: column;
+    background-color: map-get($pageColors, light);
+    &__event{
+        margin: 50px;
+        display: grid;
+        height: 60vh;
+        gap: 20px;
+        grid-template-areas:
+                    "imagen"
+                    "titulo"
+                    "parrafo";
+        grid-template-columns: 100%;
+        grid-template-rows: 25% 10% 1fr;
+        h2{
+            grid-area: titulo;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        p{
+            grid-area: parrafo;
+        }
+        img{
+            justify-self: center;
+            border-radius: 20px;
+            grid-area: imagen;
+            height: 100%;
+            width: auto;
+        }
     }
 }
 .overlay{
@@ -222,8 +255,9 @@
             }
             &__texto{
                 p{
+                    font-size: map-get($fontSize, smallpTablet);
                     span{
-                        font-size: map-get($fontSize, smallpTablet);
+                        font-size: map-get($fontSize, pTablet);
                     }
                 }
             }
@@ -242,6 +276,29 @@
                         font-size: map-get($fontSize, pTablet);
                     }
                 }
+            }
+        }
+    }
+    .timeline{
+        &__event{
+            height: 50vh;
+            &:nth-child(even){
+                grid-template-areas:
+                            "imagen  titulo"
+                            "imagen  parrafo";
+                            grid-template-columns: 20% 1fr;
+                            grid-template-rows: 10% 1fr;
+            }
+            &:nth-child(odd){
+                grid-template-areas:
+                "titulo  imagen"
+                "parrafo imagen";
+                grid-template-columns: 1fr 20%;
+                grid-template-rows: 10% 1fr;
+            }
+            img{
+                height: auto;
+                width: 100%;
             }
         }
     }
@@ -272,8 +329,9 @@
             }
             &__texto{
                 p{
+                    font-size: map-get($fontSize, smallpDesktop);
                     span{
-                        font-size: map-get($fontSize, smallpDesktop);
+                        font-size: map-get($fontSize, pDesktop);
                     }
                 }
             }
@@ -293,6 +351,29 @@
                         font-size: map-get($fontSize, pDesktop);
                     }
                 }
+            }
+        }
+    }
+    .timeline{
+        &__event{
+            height: 50vh;
+            &:nth-child(even){
+                grid-template-areas:
+                            "imagen  titulo"
+                            "imagen  parrafo";
+                            grid-template-columns: 20% 1fr;
+                            grid-template-rows: 10% 1fr;
+            }
+            &:nth-child(odd){
+                grid-template-areas:
+                "titulo  imagen"
+                "parrafo imagen";
+                grid-template-columns: 1fr 20%;
+                grid-template-rows: 10% 1fr;
+            }
+            img{
+                height: auto;
+                width: 100%;
             }
         }
     }
